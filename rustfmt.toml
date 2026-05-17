@@ -1,0 +1,14 @@
+max_width = 88
+comment_width = 88
+format_strings = true
+wrap_comments = true
+hard_tabs = false
+tab_spaces = 4
+space_before_colon = true
+imports_granularity = "Item"
+match_arm_blocks = false
+trailing_semicolon = false
+enum_discrim_align_threshold = 20
+struct_field_align_threshold = 20
+struct_lit_single_line = true
+struct_lit_width = 40
