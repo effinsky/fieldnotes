@@ -1,59 +1,41 @@
 # fieldnotes
 
-A blog with a small CMS, built in Rust from scratch. SSR-first monolith with
-Postgres persistence, markdown content, image uploads, and a self-built admin
-area. Dark/light mode included.
+Fieldnotes is a personal publishing system built in Rust.
 
-The goal is to learn Rust, architecture, and testing by building something real
-— not by wiring framework features together.
+The project is intentionally small in shape but serious in intent: an SSR-first
+monolith with explicit domain modeling, modest abstractions, and a preference
+for libraries over framework-driven control flow. The target is a production-
+usable writing tool, not a demo app.
 
-## Roadmap
+## Direction
 
-- [x] **Phase 1 — Domain** (current)
-  - `Slug` value object with validation
-  - `Post` with draft/publish lifecycle
-  - `PostStatus`, `PostError`
-  - unit tests for domain rules
+- SSR first, API second
+- Markdown-backed posts
+- Postgres persistence
+- Self-built admin/CMS
+- Local-first uploads, object storage later
+- Light/dark theme support
+- Tests around domain and application behavior
 
-- [ ] **Phase 2 — In-memory app layer**
-  - `PostRepository` trait
-  - `InMemoryPostRepository`
-  - use cases: create draft, publish, list, edit
-
-- [ ] **Phase 3 — HTTP read side**
-  - `axum` router
-  - public homepage + post page
-  - SSR HTML templates
-  - handler tests
-
-- [ ] **Phase 4 — Persistence**
-  - Postgres schema
-  - `sqlx` repository implementation
-  - DB integration tests
-
-- [ ] **Phase 5 — Admin + auth**
-  - login/logout
-  - protected admin area
-  - create/edit/publish UI
-
-- [ ] **Phase 6 — Uploads**
-  - cover and inline image upload
-  - local storage first
-  - storage abstraction
-
-- [ ] **Phase 7 — JSON API**
-  - public and admin API endpoints
-  - DTOs
-
-- [ ] **Theme support**
-  - light/dark mode
-  - system preference default
-  - manual toggle
-
-## Stack
+## Planned stack
 
 - Rust
 - axum
 - sqlx + Postgres
 - askama
 - pulldown-cmark
+
+## Current status
+
+Current work is focused on the core domain: slug validation and post
+draft/publish lifecycle rules.
+
+## Roadmap
+
+1. Domain model and invariants
+2. Application layer with in-memory repository
+3. HTTP read side
+4. Postgres-backed persistence
+5. Admin and authentication
+6. Asset uploads
+7. Public and admin JSON APIs
