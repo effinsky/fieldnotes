@@ -58,6 +58,14 @@ impl Post {
         }
     }
 
+    pub fn title(&self) -> &str {
+        &self.title
+    }
+
+    pub fn slug(&self) -> &Slug {
+        &self.slug
+    }
+
     pub fn update_title(&mut self, new_title: &str) -> Result<(), PostError> {
         if new_title.trim().is_empty() {
             return Err(PostError::EmptyTitle);

@@ -29,6 +29,10 @@ impl Slug {
     pub fn as_str(&self) -> &str {
         &self.0
     }
+
+    pub fn value(self) -> String {
+        self.0
+    }
 }
 
 #[cfg(test)]
